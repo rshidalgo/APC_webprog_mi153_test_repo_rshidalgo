@@ -6,14 +6,15 @@ html {
   background-size: cover;
 }
 body {
-background-color: green;
+font-style: italic;
 text-align: center;
 font-family: comic sans;
 font-size: 25px;
+color:white;
 }
 
 h1{
-color:white;
+color:black;
 text-align: center;
 }
 
@@ -29,7 +30,8 @@ text-align: center;
 
 
 P{
-color:black;
+color:white;
+
 text-align: center;
 font-family: comic sans;
 font-size: 25px;
