@@ -1,51 +1,13 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>  
 <html>
+<head>
+<style>
+.error {color: #FF0000;}
+</style>
+</head>
+<body>  
 
-	<head>
-		<title>My Homepage </title>
-	<link rel="stylesheet" type="text/css" href="exercise2.css"/>
-	</head
-	
-	<body>
-		<div id="header">
-		<h1>My Website</h1>
-		</div>
-		<h2>Excercise</h2>
-		<hr/>
-		<p>My name is Ray Miguel Hidalgo. </p>
-		<p>I am usually called Ray</p>
-		<p>I do have a typical hobby for a college student</p>
-		<p>Play games, either computer based or android based</p>
-		<p>I also like multiplayer games like steam offers</p>
-
-		<img src="image.jpg" width="200" height= "250px" alt="My Photo" />
-		<br>
-		<br>
-		<a href="https://www.facebook.com/rayhidalgo96">Facebook</a>
-		<br>
-		<a href="https://twitter.com/Rmiguelhidalgo">Twitter</a>
-		
-		<p id="demo">what is my favorite color</p>
-
-		<button type="button" onclick="document.getElementById('demo').innerHTML = 'Blue!'">Answer</button>
-
-		<p id="demo1">do i like pets?</p>
-
-		<button type="button" onclick="document.getElementById('demo1').innerHTML = 'Yes!'">Answer</button>
-
-		<p id="demo2">What pet do I have?</p>
-
-		<button type="button" onclick="document.getElementById('demo2').innerHTML = 'Dogs!'">Answer</button>
-
-		<p id="demo3">How many dogs do i have?</p>
-
-		<button type="button" onclick="document.getElementById('demo3').innerHTML = 'I Have six of them!'">Answer</button>
-
-		<p id="demo4">Who among them you like the most?</p>
-
-		<button type="button" onclick="document.getElementById('demo4').innerHTML = 'The labrador retriever, because it is the most expensive among them.'">Answer</button>
-		
-		<?php
+<?php
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
 $name = $email = $gender = $comment = $website = "";
@@ -124,13 +86,18 @@ function test_input($data) {
   <input type="submit" name="submit" value="Submit">  
 </form>
 
+<?php
+echo "<h2>Your Input:</h2>";
+echo $name;
+echo "<br>";
+echo $email;
+echo "<br>";
+echo $website;
+echo "<br>";
+echo $comment;
+echo "<br>";
+echo $gender;
+?>
 
-		
-
-		<div>
-			Copyright Ray Hidalgo 2016
-		</div>
-
-	</body>	
-
+</body>
 </html>
