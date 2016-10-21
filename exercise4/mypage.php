@@ -170,7 +170,7 @@
 		  Name: <input type="text" name="name" value="<?php echo $name;?>">
 		  <span class="error">* <?php echo $nameErr;?></span>
 		  <br><br>
-		  Nickname: <input type="text" name="nickname" value="<?php echo $nick;?>">
+		  Nickname: <input type="text" name="nick" value="<?php echo $nick;?>">
 		  <span class="error">* <?php echo $nickErr;?></span>
 		  <br><br>
 		  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
