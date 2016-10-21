@@ -118,8 +118,8 @@
 		  } else {
 			$nname = test_input($_POST["nname"]);
 			// check if name only contains letters and whitespace
-			if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
-			  $nameErr = "Only letters and white space allowed"; 
+			if (!preg_match("/^[a-zA-Z ]*$/",$nname)) {
+			  $nnameErr = "Only letters and white space allowed"; 
 			}
 		  }
 		  
@@ -170,6 +170,9 @@
 		  Name: <input type="text" name="name" value="<?php echo $name;?>">
 		  <span class="error">* <?php echo $nameErr;?></span>
 		  <br><br>
+		  Nickname: <input type="text" name="nname" value="<?php echo $nname;?>">
+		  <span class="error">* <?php echo $nnameErr;?></span>
+		  <br><br>
 		  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
 		  <span class="error">* <?php echo $emailErr;?></span>
 		  <br><br>
@@ -189,6 +192,8 @@
 		<?php
 		echo "<h2>Your Input:</h2>";
 		echo $name;
+		echo "<br>";
+		echo $nname;
 		echo "<br>";
 		echo $email;
 		echo "<br>";
