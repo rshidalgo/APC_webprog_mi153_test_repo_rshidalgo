@@ -99,8 +99,8 @@
 		<?php
 		
 		// define variables and set to empty values
-		$nameErr $nnameErr = $emailErr = $genderErr = $websiteErr = "";
-		$name $nname = $email = $gender = $comment = $website = "";
+		$nameErr = $nickErr = $emailErr = $genderErr = $websiteErr = "";
+		$name = $nick = $email = $gender = $comment = $website = "";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		  if (empty($_POST["name"])) {
@@ -113,13 +113,13 @@
 			}
 		  }
 		  
-		  if (empty($_POST["nickname"])) {
-			$nnameErr = "Nickname is required";
+		  if (empty($_POST["nick"])) {
+			$nickErr = "Nickname is required";
 		  } else {
-			$nname = test_input($_POST["nname"]);
+			$nick = test_input($_POST["nick"]);
 			// check if name only contains letters and whitespace
-			if (!preg_match("/^[a-zA-Z ]*$/",$nname)) {
-			  $nnameErr = "Only letters and white space allowed"; 
+			if (!preg_match("/^[a-zA-Z ]*$/",$nick)) {
+			  $nickErr = "Only letters and white space allowed"; 
 			}
 		  }
 		  
@@ -170,8 +170,8 @@
 		  Name: <input type="text" name="name" value="<?php echo $name;?>">
 		  <span class="error">* <?php echo $nameErr;?></span>
 		  <br><br>
-		  Nickname: <input type="text" name="nname" value="<?php echo $nname;?>">
-		  <span class="error">* <?php echo $nnameErr;?></span>
+		  Nickname: <input type="text" name="nickname" value="<?php echo $nick;?>">
+		  <span class="error">* <?php echo $nickErr;?></span>
 		  <br><br>
 		  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
 		  <span class="error">* <?php echo $emailErr;?></span>
@@ -193,7 +193,7 @@
 		echo "<h2>Your Input:</h2>";
 		echo $name;
 		echo "<br>";
-		echo $nname;
+		echo $nick;
 		echo "<br>";
 		echo $email;
 		echo "<br>";
