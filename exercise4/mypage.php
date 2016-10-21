@@ -126,6 +126,7 @@
 			$homeadd = "";
 		  } else {
 			$homeadd = test_input($_POST["homeadd"]);
+		  }
 		  
 		  if (empty($_POST["email"])) {
 			$emailErr = "Email is required";
@@ -219,4 +220,4 @@
 
 			</body>	
 
-		</html>
+</html>		
