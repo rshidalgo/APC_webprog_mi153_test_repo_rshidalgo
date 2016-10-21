@@ -99,8 +99,8 @@
 		<?php
 		
 		// define variables and set to empty values
-		$nameErr = $nickErr = $homeaddErr = $emailErr = $genderErr = $websiteErr = "";
-		$name = $nick = $homeadd = $email = $gender = $comment = $website = "";
+		$nameErr = $nickErr = $cellnumErr = $homeaddErr  = $emailErr = $genderErr = $websiteErr = "";
+		$name = $nick= $cellnum = $homeadd  = $email = $gender = $comment = $website = "";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		  if (empty($_POST["name"])) {
@@ -122,6 +122,17 @@
 			  $nickErr = "Only letters and white space allowed"; 
 			}
 		  }
+		  
+		  if (empty($_POST["cellnum"])) {
+			$cellnuErr = "Cellphone number is required";
+		  } else {
+			$cellnum = test_input($_POST["cellnum"]);
+			// check if name only contains numbers
+			if (!preg_match("/^[0-9 ]*$/",$cellnum)) {
+			  $cellnumErr = "Only numbers "; 
+			}
+		  }
+		  
 		  if (empty($_POST["homeadd"])) {
 			$homeadd = "";
 		  } else {
@@ -178,6 +189,9 @@
 		  Nickname: <input type="text" name="nick" value="<?php echo $nick;?>">
 		  <span class="error">* <?php echo $nickErr;?></span>
 		  <br><br>
+		  Cellphone# : <input type="text" name="cellnum" value="<?php echo $cellnum;?>">
+		  <span class="error">* <?php echo $cellnumErr;?></span>
+		  <br><br>
 		  Address: <textarea name="homeadd" rows="5" cols="40"><?php echo $homeadd;?></textarea>
 		  <br><br>
 		  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
@@ -201,6 +215,8 @@
 		echo $name;
 		echo "<br>";
 		echo $nick;
+		echo "<br>";
+		echo $cellnum;
 		echo "<br>";
 		echo $homeadd;
 		echo "<br>";
