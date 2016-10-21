@@ -99,8 +99,8 @@
 		<?php
 		
 		// define variables and set to empty values
-		$nameErr = $nickErr = $emailErr = $genderErr = $websiteErr = "";
-		$name = $nick = $email = $gender = $comment = $website = "";
+		$nameErr = $nickErr = $homeaddErr = $emailErr = $genderErr = $websiteErr = "";
+		$name = $nick = $homeadd = $email = $gender = $comment = $website = "";
 
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		  if (empty($_POST["name"])) {
@@ -122,6 +122,10 @@
 			  $nickErr = "Only letters and white space allowed"; 
 			}
 		  }
+		  if (empty($_POST["homeadd"])) {
+			$homeadd = "";
+		  } else {
+			$homeadd = test_input($_POST["homeadd"]);
 		  
 		  if (empty($_POST["email"])) {
 			$emailErr = "Email is required";
@@ -173,6 +177,8 @@
 		  Nickname: <input type="text" name="nick" value="<?php echo $nick;?>">
 		  <span class="error">* <?php echo $nickErr;?></span>
 		  <br><br>
+		  Address: <textarea name="homeadd" rows="5" cols="40"><?php echo $homeadd;?></textarea>
+		  <br><br>
 		  E-mail: <input type="text" name="email" value="<?php echo $email;?>">
 		  <span class="error">* <?php echo $emailErr;?></span>
 		  <br><br>
@@ -194,6 +200,8 @@
 		echo $name;
 		echo "<br>";
 		echo $nick;
+		echo "<br>";
+		echo $homeadd;
 		echo "<br>";
 		echo $email;
 		echo "<br>";
