@@ -113,6 +113,16 @@
 			}
 		  }
 		  
+		  if (empty($_POST["nickname"])) {
+			$nnameErr = "Nickname is required";
+		  } else {
+			$nname = test_input($_POST["nname"]);
+			// check if name only contains letters and whitespace
+			if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+			  $nameErr = "Only letters and white space allowed"; 
+			}
+		  }
+		  
 		  if (empty($_POST["email"])) {
 			$emailErr = "Email is required";
 		  } else {
