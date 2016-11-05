@@ -1,10 +1,10 @@
 <?php
-include_once 'dbconfig.php';
+include_once 'dbconfig1.php';
 
 // delete condition
 if(isset($_GET['delete_id']))
 {
-$sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
+$sql_query="DELETE FROM users1 WHERE user_id=".$_GET['delete_id'];
  mysqli_query($con,$sql_query);
  header("Location: $_SERVER[PHP_SELF]");
 }
@@ -106,6 +106,8 @@ $sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
         <p id="demo4">Who among them you like the most?</p>
 
         <button type="button" onclick="document.getElementById('demo4').innerHTML = 'The labrador retriever, because it is the most expensive among them.'">Answer</button>
+
+!<script type="text/javascript">
 function edt_id(id)
 {
  if(confirm('Sure to edit ?'))
@@ -121,10 +123,14 @@ function delete_id(id)
  }
 }
 </script>
-</head>
 <body>
 <center>
 
+<div id="header">
+ <div id="content">
+    <label>CRUD Operations With PHP and MySql - <a href="http://cleartuts.blogspot.com" target="_blank">By Cleartuts</a></label>
+    </div>
+</div>
 
 <div id="body">
  <div id="content">
@@ -142,7 +148,7 @@ function delete_id(id)
     <th colspan="2">Operations</th>
     </tr>
     <?php
- $sql_query="SELECT * FROM users";
+ $sql_query="SELECT * FROM users1";
  $result_set=mysqli_query($con,$sql_query);
  while($row=mysqli_fetch_row($result_set))
  {
