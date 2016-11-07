@@ -106,7 +106,10 @@ $sql_query="DELETE FROM users1 WHERE user_id=".$_GET['delete_id'];
         <p id="demo4">Who among them you like the most?</p>
 
         <button type="button" onclick="document.getElementById('demo4').innerHTML = 'The labrador retriever, because it is the most expensive among them.'">Answer</button>
-
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CRUD Operations With PHP and MySql - By Cleartuts</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
 !<script type="text/javascript">
 function edt_id(id)
 {
