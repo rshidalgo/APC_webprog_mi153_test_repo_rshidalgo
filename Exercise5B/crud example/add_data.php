@@ -13,20 +13,20 @@ if(isset($_POST['btn-save']))
  $homeadd_name = $_POST['homeadd_name'];
  $email_name = $_POST['email_name'];
  $gender_name = $_POST['gender_name'];
- $website_name = $_Post['website_name'];
- $comment_name = $_post['comment_name'];
+ $website_name = $_POST['website_name'];
+ $comment_name = $_POST['comment_name'];
  // variables for input data
  
  // sql query for inserting data into database
  
-        $sql_query = "INSERT INTO users(first_name,last_name,user_city, name_name, nick_name, cellnum_name, homeadd_name, email_name, gender_name, website_name, comment_name) VALUES('$first_name','$last_name','$city_name', '$name_name', '$nick_name', '$cellnum_name', 'homeadd_name', 'email_name', 'gender_name', '$website_name' '$comment_name',)";
+        $sql_query = "INSERT INTO users(first_name,last_name,user_city, name_name, nick_name, cellnum_name, homeadd_name, email_name, gender_name, website_name, comment_name) VALUES('$first_name','$last_name','$city_name', '$name_name', '$nick_name', '$cellnum_name', '$homeadd_name', '$email_name', '$gender_name', '$website_name' '$comment_name',)";
  mysqli_query($con,$sql_query);
         
         // sql query for inserting data into database
  
 }
 ?>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Database Form</title>
@@ -68,10 +68,16 @@ if(isset($_POST['btn-save']))
     <td><input type="text" name="homeadd_name" placeholder="home address" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="website_name" placeholder="website" required /></td>
+    <td><input type="text" name="email_name" placeholder="email" required /></td>
+    </tr>
+    <tr>
+    <td><input type="text" name="gender_name" placeholder="gender" required /></td>
     </tr>
     <tr>
     <td><input type="text" name="comment_name" placeholder="comment" required /></td>
+    </tr>
+    <tr>
+    <td><input type="text" name="website_name" placeholder="website" required /></td>
     </tr>
     <tr>
     <td><button type="submit" name="btn-save"><strong>SAVE</strong></button></td>
