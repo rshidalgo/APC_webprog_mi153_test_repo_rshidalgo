@@ -19,7 +19,7 @@ if(isset($_POST['btn-save']))
  
  // sql query for inserting data into database
  
-        $sql_query = "INSERT INTO users(first_name,last_name,user_city, name_name, nick_name, cellnum_name, homeadd_name, email_name, gender_name, website_name, comment_name) VALUES('$first_name','$last_name','$city_name', '$name_name', '$nick_name', '$cellnum_name', '$homeadd_name', '$email_name', '$gender_name', '$website_name' '$comment_name',)";
+        $sql_query = "INSERT INTO users(first_name,last_name,user_city, name_name,nick_name,cellnum_name,homeadd_name,email_name,gender_name,website_name,user_comment) VALUES('$first_name','$last_name','$city_name','$name_name','$nick_name','$cellnum_name', '$homeadd_name','$email_name','$gender_name','$website_name','$comment_name')";
  mysqli_query($con,$sql_query);
         
         // sql query for inserting data into database
@@ -37,7 +37,7 @@ if(isset($_POST['btn-save']))
 
 <div id="header">
  <div id="content">
-    <label>Database Form</label>
+    <label> Database Form </label>
     </div>
 </div>
 <div id="body">
@@ -55,6 +55,7 @@ if(isset($_POST['btn-save']))
     </tr>
     <tr>
     <td><input type="text" name="city_name" placeholder="City" required /></td>
+    </tr>
     </tr>
     <td><input type="text" name="name_name" placeholder="name" required /></td>
     </tr>
@@ -77,7 +78,7 @@ if(isset($_POST['btn-save']))
     <td><input type="text" name="comment_name" placeholder="comment" required /></td>
     </tr>
     <tr>
-    <td><input type="text" name="website_name" placeholder="website" required /></td>
+    <td><input type="text" name="website_name" placeholder="website"  required /></td>
     </tr>
     <tr>
     <td><button type="submit" name="btn-save"><strong>SAVE</strong></button></td>

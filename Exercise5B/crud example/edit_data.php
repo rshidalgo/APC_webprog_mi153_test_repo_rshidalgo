@@ -12,10 +12,19 @@ if(isset($_POST['btn-update']))
  $first_name = $_POST['first_name'];
  $last_name = $_POST['last_name'];
  $city_name = $_POST['city_name'];
+ $name_name = $_POST['name_name'];
+ $nick_name = $_POST['nick_name'];
+ $cellnum_name = $_POST['cellnum_name'];
+ $homeadd_name = $_POST['homeadd_name'];
+ $email_name = $_POST['email_name'];
+ $gender_name = $_POST['gender_name'];
+ $website_name = $_POST['website_name'];
+ $comment_name = $_POST['comment_name'];
  // variables for input data
-
- // sql query for update data into database
- $sql_query = "UPDATE users SET first_name='$first_name',last_name='$last_name',user_city='$city_name' WHERE user_id=".$_GET['edit_id'];
+ 
+ // sql query for inserting data into database
+ 
+        $sql_query = "INSERT INTO users(first_name,last_name,user_city, name_name, nick_name, cellnum_name, homeadd_name, email_name, gender_name, website_name, comment_name) VALUES('$first_name','$last_name','$city_name', '$name_name', '$nick_name', '$cellnum_name', '$homeadd_name', '$email_name', '$gender_name', '$website_name' '$comment_name',)";
  // sql query for update data into database
  
  // sql query execution function
@@ -70,6 +79,9 @@ if(isset($_POST['btn-cancel']))
     <td><input type="text" name="last_name" placeholder="Last Name" value="<?php echo $fetched_row['last_name']; ?>" required /></td>
     </tr>
     <tr>
+    <td><input type="text" name="city_name" placeholder="City" value="<?php echo $fetched_row['user_city']; ?>" required /></td>
+    </tr>
+     <tr>
     <td><input type="text" name="city_name" placeholder="City" value="<?php echo $fetched_row['user_city']; ?>" required /></td>
     </tr>
     <tr>

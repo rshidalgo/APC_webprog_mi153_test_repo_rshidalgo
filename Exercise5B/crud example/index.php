@@ -15,7 +15,7 @@ $sql_query="DELETE FROM users WHERE user_id=".$_GET['delete_id'];
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>CRUD Operations With PHP and MySql - By Cleartuts</title>
+<title>My Website</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
 <script type="text/javascript">
 function edt_id(id)
@@ -74,11 +74,12 @@ function delete_id(id)
         <p id="demo4">Who among them you like the most?</p>
 
         <button type="button" onclick="document.getElementById('demo4').innerHTML = 'The labrador retriever, because it is the most expensive among them.'">Answer</button>
-<div id="header">
- <div id="content">
-    <label>Database Form - <a href="http://cleartuts.blogspot.com" target="_blank">By Ray Hidalgo</a></label>
-    </div>
 </div>
+<div id="header1">
+ <div id="content">
+    <label>Database Form By Ray Hidalgo</a></label>
+    </div>
+
 
 <div id="body">
  <div id="content">
@@ -114,7 +115,7 @@ function delete_id(id)
         <td><?php echo $row[8]; ?></td>
         <td><?php echo $row[9]; ?></td>
         <td><?php echo $row[10]; ?></td>
-  <td align="center"><a href="javascript:edt_id('<?php echo $row[0]; ?>')"><img src="b_edit.png" align="EDIT" /></a></td>
+  <td align="center"><a href="javascript:edt_id('<?php echo $row[1]; ?>')"><img src="b_edit.png" align="EDIT" /></a></td>
         <td align="center"><a href="javascript:delete_id('<?php echo $row[0]; ?>')"><img src="b_drop.png" align="DELETE" /></a></td>
         </tr>
         <?php
