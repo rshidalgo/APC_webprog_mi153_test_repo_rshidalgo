@@ -3,8 +3,8 @@ include_once 'dbconfig.php';
 if(isset($_GET['edit_id']))
 {
  $sql_query="SELECT * FROM users WHERE user_id=".$_GET['edit_id'];
- $result_set=mysql_query($sql_query);
- $fetched_row=mysql_fetch_array($result_set);
+ $result_set=mysqli_query($con,$sql_query);
+ $fetched_row=mysqli_fetch_array($result_set);
 }
 if(isset($_POST['btn-update']))
 {
@@ -23,12 +23,12 @@ if(isset($_POST['btn-update']))
  // variables for input data
  
  // sql query for inserting data into database
- 
-        $sql_query = "INSERT INTO users(first_name,last_name,user_city, name_name, nick_name, cellnum_name, homeadd_name, email_name, gender_name, website_name, comment_name) VALUES('$first_name','$last_name','$city_name', '$name_name', '$nick_name', '$cellnum_name', '$homeadd_name', '$email_name', '$gender_name', '$website_name' '$comment_name',)";
+ 	 $sql_query = "UPDATE users SET first_name='$first_name',last_name='$last_name',user_city='$city_name',name_name='$name_name',nick_name='$nick_name',cellnum_name='$cellnum_name',homeadd_name='$homeadd_name',email_name='$email_name',gender_name='$gender_name',website_name='$website_name',comment_name='$comment_name' WHERE user_id=".$_GET['edit_id'];
+       
  // sql query for update data into database
  
  // sql query execution function
- if(mysql_query($sql_query))
+ if(mysqli_query($con, $sql_query))
  {
   ?>
   <script type="text/javascript">
@@ -82,7 +82,28 @@ if(isset($_POST['btn-cancel']))
     <td><input type="text" name="city_name" placeholder="City" value="<?php echo $fetched_row['user_city']; ?>" required /></td>
     </tr>
      <tr>
-    <td><input type="text" name="city_name" placeholder="City" value="<?php echo $fetched_row['user_city']; ?>" required /></td>
+    <td><input type="text" name="name_name" placeholder="name" value="<?php echo $fetched_row['name_name']; ?>" required /></td>
+    </tr>
+    <tr>
+    <td><input type="text" name="nick_name" placeholder="nick" value="<?php echo $fetched_row['nick_name']; ?>" required /></td>
+    </tr>
+    <tr>
+    <td><input type="text" name="cellnum_name" placeholder="cellnumber" value="<?php echo $fetched_row['cellnum_name']; ?>" required /></td>
+    </tr>
+    <tr>
+    <td><input type="text" name="homeadd_name" placeholder="homeaddress" value="<?php echo $fetched_row['homeadd_name']; ?>" required /></td>
+    </tr>
+    <tr>
+    <td><input type="text" name="email_name" placeholder="email" value="<?php echo $fetched_row['email_name']; ?>" required /></td>
+    </tr>
+    <tr>
+    <td><input type="text" name="gender_name" placeholder="gender" value="<?php echo $fetched_row['gender_name']; ?>" required /></td>
+    </tr>
+    <tr>
+    <td><input type="text" name="website_name" placeholder="website" value="<?php echo $fetched_row['website_name']; ?>" required /></td>
+    </tr>
+    <tr>
+     <td><input type="text" name="comment_name" placeholder="comment" value="<?php echo $fetched_row['comment_name']; ?>" required /></td>
     </tr>
     <tr>
     <td>
