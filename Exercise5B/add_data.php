@@ -62,13 +62,13 @@ if(isset($_POST['btn-save']))
     <tr>
     <td><input type="text" name="gender_name" placeholder="gender" required /></td>
     </tr>
+     <tr>
+    <td><input type="text" name="website_name" placeholder="website"  required /></td>
+    </tr>   
     <tr>
     <td><input type="text" name="comment_name" placeholder="comment" required /></td>
     </tr>
-    <tr>
-    <td><input type="text" name="website_name" placeholder="website"  required /></td>
-    </tr>
-    <tr>
+   <tr>
     <td><button type="submit" name="btn-save"><strong>SAVE</strong></button></td>
     </tr>
     </table>
