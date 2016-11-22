@@ -4,9 +4,6 @@ include_once 'dbconfig.php';
 if(isset($_POST['btn-save']))
 {
  // variables for input data
- $first_name = $_POST['first_name'];
- $last_name = $_POST['last_name'];
- $city_name = $_POST['city_name'];
  $name_name = $_POST['name_name'];
  $nick_name = $_POST['nick_name'];
  $cellnum_name = $_POST['cellnum_name'];
@@ -19,7 +16,7 @@ if(isset($_POST['btn-save']))
  
  // sql query for inserting data into database
  
-        $sql_query = "INSERT INTO users(first_name,last_name,user_city, name_name,nick_name,cellnum_name,homeadd_name,email_name,gender_name,website_name,user_comment) VALUES('$first_name','$last_name','$city_name','$name_name','$nick_name','$cellnum_name', '$homeadd_name','$email_name','$gender_name','$website_name','$comment_name')";
+        $sql_query = "INSERT INTO users(name_name,nick_name,cellnum_name,homeadd_name,email_name,gender_name,website_name,user_comment) VALUES('$name_name','$nick_name','$cellnum_name', '$homeadd_name','$email_name','$gender_name','$website_name','$comment_name')";
  mysqli_query($con,$sql_query);
         
         // sql query for inserting data into database
@@ -46,15 +43,6 @@ if(isset($_POST['btn-save']))
     <table align="center">
     <tr>
     <td align="center"><a href="index.php">back to main page</a></td>
-    </tr>
-    <tr>
-    <td><input type="text" name="first_name" placeholder="First Name" required /></td>
-    </tr>
-    <tr>
-    <td><input type="text" name="last_name" placeholder="Last Name" required /></td>
-    </tr>
-    <tr>
-    <td><input type="text" name="city_name" placeholder="City" required /></td>
     </tr>
     </tr>
     <td><input type="text" name="name_name" placeholder="name" required /></td>

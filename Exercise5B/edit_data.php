@@ -9,9 +9,6 @@ if(isset($_GET['edit_id']))
 if(isset($_POST['btn-update']))
 {
  // variables for input data
- $first_name = $_POST['first_name'];
- $last_name = $_POST['last_name'];
- $city_name = $_POST['city_name'];
  $name_name = $_POST['name_name'];
  $nick_name = $_POST['nick_name'];
  $cellnum_name = $_POST['cellnum_name'];
@@ -23,7 +20,7 @@ if(isset($_POST['btn-update']))
  // variables for input data
  
  // sql query for update data into database
- 	 $sql_query = "UPDATE users SET first_name='$first_name',last_name='$last_name',user_city='$city_name',name_name='$name_name',nick_name='$nick_name',cellnum_name='$cellnum_name',homeadd_name='$homeadd_name',email_name='$email_name',gender_name='$gender_name',website_name='$website_name',comment_name='$comment_name' WHERE user_id=".$_GET['edit_id'];
+ 	 $sql_query = "UPDATE users SET name_name='$name_name',nick_name='$nick_name',cellnum_name='$cellnum_name',homeadd_name='$homeadd_name',email_name='$email_name',gender_name='$gender_name',website_name='$website_name',comment_name='$comment_name' WHERE user_id=".$_GET['edit_id'];
        
  // sql query for update data into database
  
@@ -73,15 +70,6 @@ if(isset($_POST['btn-cancel']))
     <form method="post">
     <table align="center">
     <tr>
-    <td><input type="text" name="first_name" placeholder="First Name" value="<?php echo $fetched_row['first_name']; ?>" required /></td>
-    </tr>
-    <tr>
-    <td><input type="text" name="last_name" placeholder="Last Name" value="<?php echo $fetched_row['last_name']; ?>" required /></td>
-    </tr>
-    <tr>
-    <td><input type="text" name="city_name" placeholder="City" value="<?php echo $fetched_row['user_city']; ?>" required /></td>
-    </tr>
-     <tr>
     <td><input type="text" name="name_name" placeholder="name" value="<?php echo $fetched_row['name_name']; ?>" required /></td>
     </tr>
     <tr>
