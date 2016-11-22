@@ -77,7 +77,7 @@ function delete_id(id)
 </div>
 <div id="header1">
  <div id="content">
-    <label>Database Form By Ray Hidalgo</a></label>
+    <label>Database Form By Ray Hidalgo</label>
     </div>
 
 
@@ -85,15 +85,15 @@ function delete_id(id)
  <div id="content">
     <table align="center">
     <tr>
-    <th colspan="10"><a href="add_data.php">add data here.</a></th>
+    <th colspan="10"><a href="add_data.php">add data here</a></th>
     </tr>
     
     <th>Name</th>
     <th>Nickname</th>
     <th>Cellphone Number</th>
     <th>Home address</th>
-    <th>Email</th>>
-    <th>Gender</th>th>
+    <th>Email</th>
+    <th>Gender</th>
     <th>Website</th>
     <th>comment_name</th>
     <th colspan="2">Operations</th>
