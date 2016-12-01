@@ -1,7 +1,7 @@
 <html>
 	<head>
-		<title>My Website</title>
+		<title>DATABASE USING CODEIGNITER</title>
 	</head>
 	<body>
-		<h1>Ray Miguel Hidalgo</h1>
-		<p><a href="<?php echo site_url('news'); ?>">Home</a> | <a href="<?php echo site_url('news/create'); ?>">Add News</a></p>
+		<h1>Simple CRUD</h1>
+		<p><a href="<?php echo site_url('news'); ?>">Home</a> | <a href="<?php echo site_url('news/create'); ?>">Add</a></p>

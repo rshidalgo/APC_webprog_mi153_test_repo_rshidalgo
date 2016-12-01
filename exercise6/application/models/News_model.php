@@ -18,41 +18,55 @@ class News_model extends CI_Model {
         return $query->row_array();
     }
     
-    public function get_news_by_id($id = 0)
+    public function get_news_by_id($user_id = 0)
     {
-        if ($id === 0)
+        if ($user_id === 0)
         {
             $query = $this->db->get('news');
             return $query->result_array();
         }
  
-        $query = $this->db->get_where('news', array('id' => $id));
+        $query = $this->db->get_where('news', array('user_id' => $user_id));
         return $query->row_array();
     }
     
-    public function set_news($id = 0)
+    public function set_news($user_id = 0)
     {
         $this->load->helper('url');
  
         $slug = url_title($this->input->post('title'), 'dash', TRUE);
  
         $data = array(
-            'title' => $this->input->post('title'),
+            'name' => $this->input->post('name'),
             'slug' => $slug,
-            'text' => $this->input->post('text')
+            'nickname' => $this->input->post('nickname'),
+		 
+			   'address' => $this->input->post('address'),
+          
+            'email' => $this->input->post('email'),
+		 
+			   'website' => $this->input->post('website'),
+            
+            'comment' => $this->input->post('comment'),
+			 
+			   'gender' => $this->input->post('gender'),
+            
+            'cellphone' => $this->input->post('cellphone')
+			 
+			
         );
         
-        if ($id == 0) {
+        if ($user_id == 0) {
             return $this->db->insert('news', $data);
         } else {
-            $this->db->where('id', $id);
+            $this->db->where('user_id', $user_id);
             return $this->db->update('news', $data);
         }
     }
     
-    public function delete_news($id)
+    public function delete_news($user_id)
     {
-        $this->db->where('id', $id);
+        $this->db->where('user_id', $user_id);
         return $this->db->delete('news');
     }
 }
