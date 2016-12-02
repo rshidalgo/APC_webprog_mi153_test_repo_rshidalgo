@@ -21,8 +21,9 @@
         <p>Play games, either computer based or android based</p>
         <p>I also like multiplayer games like steam offers</p>
 
-        <img src="image.jpg" width="200" height= "250px" alt="My Photo" />
-        <br>
+        //<img src="image.jpg" width="200" height= "250px" alt="My Photo" />
+        <img src="<?php echo base_url('exercise6/image.jpg'); ?>" />
+	<br>
         <br>
         <a href="https://www.facebook.com/rayhidalgo96">Facebook</a>
         <br>
