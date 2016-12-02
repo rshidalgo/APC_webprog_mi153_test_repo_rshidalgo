@@ -1,5 +1,6 @@
+ <link rel="stylesheet" href="style.css" type="text/css" />
 <h2><?php echo $name; ?></h2>
- 
+ <link rel="stylesheet" href="style.css" type="text/css" />
 <?php echo validation_errors(); ?>
  
 <?php echo form_open('news/create'); ?>    

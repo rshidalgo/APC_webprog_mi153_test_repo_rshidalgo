@@ -2,7 +2,7 @@
  
 <?php echo validation_errors(); ?>
  
-<?php echo form_open('news/edit/'.$news_item['user_id']); ?>
+<?php echo form_open('news/edit/'.$news_item['id']); ?>
 <td><label for="text">Gender</label></td>   
    <table>
         <tr>
