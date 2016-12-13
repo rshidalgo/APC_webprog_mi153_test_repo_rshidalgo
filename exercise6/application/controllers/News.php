@@ -120,7 +120,7 @@ class News extends CI_Controller {
     
     public function delete()
     {
-        $user_id = $this->url->segment(3);
+      $user_id = $this->uri->segment(3);
         
         if (empty($user_id))
         {
